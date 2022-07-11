@@ -44,6 +44,7 @@
 
 
 
+
 # -------------------------------------------- 
 
 # Part 2:
@@ -53,11 +54,57 @@
 # - Print each item available and it's cost. You should have at least 3 items available (a drink, meal, and dessert item). 
 
 # --------------------------------------------
+import os
+milk_tea = 5.00
+strawberry_cream = 5.95
+peach_spritzer = 4.35
+mango_spritzer = 4.35
+oreo_cream = 5.95
+blended_vaporeon = 6.00
 
+def display_menu():
+	print("1. Milk Tea",milk_tea)
+	print("2. Strawberry Cream",strawberry_cream)
+	print("3. Peach Spritzer",peach_spritzer)
+	print("4. Mango Spritzer",mango_spritzer)
+	print("5. Oreo Cream", oreo_cream)
+	print("6. Blended Vaporeon", blended_vaporeon)
 
+def ordering_process():
+	display_menu()
+	numOfUsers = int(input("How many people are in your group?"))
+	number_items_ordered = (int(input("How many items will you be ordering?")))
+	while number_items_ordered > 0:
+		display_menu()
+		item_sum = 0
+		individual_items = (input("What item are you ordering?"))
+		if individual_items == "1":
+			item_sum = item_sum + milk_tea
+			number_items_ordered = number_items_ordered - 1
+		elif individual_items == "2":
+			item_sum = item_sum + strawberry_cream
+			number_items_ordered = number_items_ordered - 1
+		elif individual_items == "3":
+			item_sum = item_sum + peach_spritzer
+			number_items_ordered = number_items_ordered - 1
+		elif individual_items == "4":
+			item_sum = item_sum + mango_spritzer
+			number_items_ordered = number_items_ordered - 1
+		elif individual_items == "5":
+			item_sum = item_sum + oreo_cream
+			number_items_ordered = number_items_ordered - 1
+		elif individual_items == "6":
+			item_sum = item_sum + blended_vaporeon
+			number_items_ordered = number_items_ordered - 1 
+		else:
+			print("Please use the number associated with the item on the menu.")
+	
+	totalpt1 = item_sum * 1.10
+	print("The total sum is",totalpt1)
+	total = totalpt1 / numOfUsers
+	print("The cost of the order to each person is",total)
 
-
-
+ordering_process()
 
 # -------------------------------------------- 
 
@@ -72,8 +119,7 @@
 
 # --------------------------------------------
 
-
-
+# part 3
 
 
 
@@ -101,7 +147,7 @@
 
 
 
-
+#part 3
 
 
 
