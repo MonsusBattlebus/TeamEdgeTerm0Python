@@ -29,28 +29,27 @@ print("My Simple Calculator")
 
 # Write a function called add_numbers that will take two numbers and return the sum.
 
-
-
-
-
-
+def add_numbers(a,b):
+	sum = a + b
+	return sum
 
 # Write a function called sub_numbers that will take two numbers and return the difference.
 
-
-
+def sub_numbers(a,b):
+	sum = a - b
+	return sum
 
 
 # ------------
 # Testing Code - Uncomment the code below to test your code!
 
-# check_answers(add_numbers(5, 15), 20)
-# check_answers(add_numbers(3, 18), 21)
-# check_answers(add_numbers(12, 28), 40)
+print(add_numbers(5, 15))
+print(add_numbers(3, 18))
+print(add_numbers(12, 28))
 
-# check_answers(sub_numbers(18, 7), 11)
-# check_answers(sub_numbers(11, 9), 2)
-# check_answers(sub_numbers(18, 21), -3)
+print(sub_numbers(18, 7))
+print(sub_numbers(11, 9))
+print(sub_numbers(18, 21))
 
 # -------------------------------------------- 
 
@@ -68,7 +67,9 @@ print("My Simple Calculator")
 
 # Write a function called multiply_numbers that will take two numbers and return the product.
 
-
+def multiply_numbers (a,b):
+	product = a * b
+	return product
 
 
 
@@ -76,20 +77,22 @@ print("My Simple Calculator")
 # Write a function called divide_numbers that will take two numbers and return the quotient.
 
 
-
+def divide_numbers(a,b):
+	product = a / b
+	return product
 
 
 
 # ------------
 # Testing Code - Uncomment the code below to test your code!
 
-# check_answers(multiply_numbers(10, 3), 30); 
-# check_answers(multiply_numbers(21, 7), 147);
-# check_answers(multiply_numbers(4, 16), 64); 
+print(multiply_numbers(10, 3)) 
+print(multiply_numbers(21, 7))
+print(multiply_numbers(4, 16)) 
 
-# check_answers(divide_numbers(24, 100), `.24`);
-# check_answers(divide_numbers(21, 7), `3`);
-# check_answers(divide_numbers(15, 4), `3.75`);
+print(divide_numbers(24, 100))
+print(divide_numbers(21, 7))
+print(divide_numbers(15, 4))
 
 # -------------------------------------------- 
 
@@ -102,22 +105,51 @@ print("My Simple Calculator")
 
 # -------------------------------------------- 
 
+from math import sqrt
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def operation_call():
+	print("What operator would you like to use?")
+	print("+")
+	print("-")
+	print("*")
+	print("/")
+	print("Exponent")
+	print("sqrt")
+	operator = input()
+	if operator == "+":
+		print("What's the first value")
+		value1 = float(input())
+		print("What's the second value?")
+		value2 = float(input())
+		print("Your answer is",value1 + value2)
+	elif operator == "-":
+		print("What's the first value")
+		value1 = float(input())
+		print("What's the second value?")
+		value2 = float(input())
+		print("Your answer is",value1 - value2)
+	elif operator == "*":
+		print("What's the first value")
+		value1 = float(input())
+		print("What's the second value?")
+		value2 = float(input())
+		print("Your answer is",value1 * value2)
+	elif operator == "-":
+		print("What's the first value")
+		value1 = float(input())
+		print("What's the second value?")
+		value2 = float(input())
+		print("Your answer is",value1 / value2)
+	elif operator == "Exponent" or operator == "exponent":
+		print("What's the first value")
+		value1 = float(input())
+		print("What's the second value?")
+		value2 = float(input())
+		print("Your answer is",value1 ** value2)
+	elif operator == "sqrt":
+		print("What's the value")
+		value1 = float(input())
+		print("Your answer is",sqrt(value1))
 
 # -------------------------------------------- 
 
@@ -141,7 +173,7 @@ print("My Simple Calculator")
   
 # -------------------------------------------- 
 
-
+print(operation_call())
 
 
 

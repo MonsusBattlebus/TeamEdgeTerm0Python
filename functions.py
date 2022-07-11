@@ -1,3 +1,4 @@
+
 # -------------------------------------------- 
 
 	# You've just learned about functions.
@@ -15,34 +16,57 @@
   # Challenge 1: Let's try to write some basic functions.
 # -------------------------------------------- 
 
+
 print("------------------- Challenge 1 -------------------")
 
 # **** Challenge 1: Problem 1 ****
 # Write a function called print_message() that prints any message you want.
 
+def print_message(message):
+	print(message)
 
 # **** Challenge 1: Problem 2 ****
 # Write a function called print_five_messages() that calls print_message() five times.
 
+def print_five_messages(message):
+	for x in "sussy":
+		print_message(message)
 
 # **** Challenge 1: Problem 3 ****
 # Write a function called get_user_input() that asks the user if they'd like to print your message
 # once or five times. Then call one of the two functions above based on what the user decides.
 
+def get_user_input(message):
+	print("How many times would you like to print the message. One or Five?")
+	times = str(input())
+	if times == "Five" or times == "five":
+		print_five_messages(message)
+	elif times == "One" or times == "one":
+		print_message(message)
+	else:
+		print ("Please put 1 or 5. Not spelled out")
 
 # **** Challenge 1: Problem 4 ****
 # Write a function called print_greeting() that prints a greeting message to the user.
 
+def print_greeting():
+	print("Welcome!")
 
 # **** Challenge 1: Problem 5 ****
 # Write a function called print_closing() that prints a goodbye message to the user.
 
+def print_closing():
+	print("Goodbye. I hope you enjoyed this program.")
 
 # **** Challenge 1: Problem 6 ****
 # Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 # Remember! Use the functions that you've already made. Don't hardcode anything!
 
-
+def run():
+	print_greeting()
+	print("Please input something")
+	user_input = input()
+	print_closing()
 
 # -------------------------------------------- 
 
@@ -65,10 +89,20 @@ print("------------------- Challenge 2 -------------------")
 
 # -------------------------------------------- 
 
+def sum_double(x,y):
+	if x == y:
+		print((x+y)*2)
+	elif x != y:
+		print (x+y)
+	else:
+		print("ERROR")
 
-
-
-
+print_message(input())
+print_five_messages(input())
+get_user_input(input())
+print_greeting()
+print_closing()
+run()
 
 
 # Make sure to test your code! Write a few function calls to make sure your code works!
@@ -87,8 +121,17 @@ print("------------------- Challenge 2 -------------------")
 # -------------------------------------------- 
 
 
+def makes_10(a,b):
+	answer = False
+	if a == 10 or b == 10 or a + b == 10:
+		answer = True
+		return answer
+	else:
+		answer = False
+		return answer
 
-
+print("makes_10 test")
+print(makes_10(8,2))
 
 
 # Make sure to test your code! Write a few function calls to make sure your code works!
@@ -111,11 +154,27 @@ print("------------------- Challenge 2 -------------------")
 
 # -------------------------------------------- 
 
+def alarm_clock(x, y):
+	alarm = "7:00"
+	if x == 0 and y == True or x == 6 and y == True:
+		alarm = "Off"
+		return alarm
+	elif x == 0 and y == False or x == 6 and y == False:
+		alarm = "10:00"
+		return alarm
+	elif x > 0 and x < 6 and y == True:
+		alarm = "10:00"
+		return alarm
+	elif x > 0 and x < 6 and y == False:
+		alarm = "7:00"
+		return alarm
 
 
 
-
-
+print (alarm_clock(0, False))
+print (alarm_clock(6, True))
+print (alarm_clock(1, False))
+print (alarm_clock(1, True))
 
 # Make sure to test your code! Write a few function calls to make sure your code works!
 
@@ -137,6 +196,21 @@ print("------------------- Challenge 2 -------------------")
 # -------------------------------------------- 
 
 
+def ticket_cost(s):
+	result = 0
+	if s <= 60:
+		result = 0
+		return result
+	elif s > 60 and s <= 80:
+		result = 1
+		return result
+	elif s >= 81:
+		result = 2
+		return result
+
+print(ticket_cost(50))
+print(ticket_cost(70))
+print(ticket_cost(90))
 
 
 
