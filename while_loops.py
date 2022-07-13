@@ -42,7 +42,13 @@ def test_prime(n):
 
 #-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
 
-
+num = 100
+while num >= 0:
+  if test_prime(num) == False:
+    print(f"{num} isn't prime")
+  elif test_prime(num) == True:
+    print(f"{num} is prime")
+  num = num - 1
 
 print("------------------- CHALLENGE 2 : FOUND   -------------------")
 
@@ -50,6 +56,20 @@ print("------------------- CHALLENGE 2 : FOUND   -------------------")
 items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
 
 #-->TODO: Use a while loop to search the contents of a list for the key! If it exists, print "found the key!"
+
+key_found = False
+num = 0
+while key_found == False:
+  if items[num] == "key":
+    key_found = True
+    print("Found the key!")
+  else: 
+    print(f"List entry {num} wasn't they key.")
+    num = num + 1
+  
+
+
+
 
 
 
@@ -61,9 +81,10 @@ print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 #-->TODO: Make me count  2, 4, 6,..., 50
 
 def even_numbers_to_fifty():
-    num = 50
+    num = 0
     while num < 50:
-        print("number: " + str(num))
+        num = num + 2
+        print(f"number: {num}")
 
 even_numbers_to_fifty()
 
@@ -92,6 +113,9 @@ def pattern():
         my_list.append(index)
         print(my_list)
         index += 1
+    while len(my_list) != 1: 
+      my_list.pop()
+      print(my_list)
 
 pattern()
 
@@ -104,7 +128,20 @@ print("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 #         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!
 #         Use this handy boolean to get you started! You will need input()!
 
+from random import randint
+
 is_correct = False
+num1 = randint(0,1)
+num2 = randint(0,2)
+
+while is_correct == False:
+  print(f"Guess the number")
+  answer = int(input())
+  if answer == num1 or answer == num2:
+    print("Correct!")
+    is_correct = True
+  else:
+    print("Incorrect, try again!")
 
 
 print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
@@ -113,17 +150,18 @@ print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 #         You are given two starter functions and a loop to get started! 
 #         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
 
-keep_asking = False
+keep_asking = True
 
 def prompt_user():
-    pass
+    print("Hey, what do you think I am?")
+    response = input()
+    return response
 
 def response(response):
-    pass
+     print(f"I know you're {response}, but what am I?") 
 
-while keep_asking:
-    #response(prompt_user())
-    pass
+while keep_asking == True:
+    response(prompt_user())
 
 #-->TODO: Challenge! write a secret word to break out of the loop!
 
