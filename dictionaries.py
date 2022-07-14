@@ -16,6 +16,9 @@
  # 
  # #########################################################################/
 
+from imghdr import what
+
+
 print("------------------- CHALLENGE 1 : DEFINE    -------------------")
 
 #Below is a simple example of a dictionary implementaion. 
@@ -23,6 +26,9 @@ print("------------------- CHALLENGE 1 : DEFINE    -------------------")
 
 dictionary = {
     "name": "box",
+    "sus": True,
+    "sussy": "baka",
+    "Persona": "SSS+-Tier",
     "is_empty": True
 }
 #working with the dictionary:
@@ -38,9 +44,16 @@ print(dictionary)
 
 #-->TODO: Declare a new dictionary and set at least 4 properties to it including: string, boolean, number, list
 
+new_dict = {
+    "Naruto": "Mid",
+    "Average Age of a Naruto Fan": -5,
+    "Saiki K best anime?": True,
+    "What Naruto Fans do": ["Cope","Mald","Seethe"]
+}
+
 ##################################  MY dictionary ########################### #/
 
-
+print(new_dict["What Naruto Fans do"])
 
 
 
@@ -53,23 +66,39 @@ print("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 #-->TODO: Print your dictionary you created above
 
+print(new_dict)
 
 #-->TODO: Update the dictionary you just created  by adding new properties and values, including list elements, in this section.
 
+new_dict["The Island"] = "The Island is going to blow up in 8 minutes"
+new_dict["Lmao"] = "You blue gumball son of a bitch and you hot topic wannabe"
+new_dict["I hate you"] = "You have done nothing but ruin my life I hope you both die."
 
 #-->TODO: Print your dictionary again and observe changes
 
+print(new_dict)
 
 print("------------------- CHALLENGE 3 : MEHTODS   -------------------")
 
 
 #-->TODO: Make a method that will update your dictionary value. It should take in a dictionary and return it modified.
 
+def mogus(Thing_they_want_changed,what_to):
+    new_dict[Thing_they_want_changed] = what_to
 
 #-->TODO: Call the method.
 
-
+mogus("Lmao","Sussy Baka")
 
 print("------------------- CHALLENGE 4 : LITERALLY   -------------------")
 
 #-->TODO: Put it all together using a string literal to tell the story of your dictionary!
+
+def stringlit(dict):
+    stringlit = ""
+    for x,y in dict.items():
+        stringlit += str(x) + ","
+        stringlit += str(y) + ","
+    return stringlit
+
+print(stringlit(new_dict))
