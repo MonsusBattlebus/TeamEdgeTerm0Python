@@ -239,6 +239,8 @@ while Foxy_AI > 20:
   Foxy_AI = int(input())
   os.system('clear')
 
+#Thats all the beginning, the difficulty selection
+
 if Freddy_AI == 20 and Bonnie_AI == 20 and Chica_AI == 20 and Foxy_AI == 20:
   print("Good luck.")
   sleep(3)
@@ -250,6 +252,8 @@ elif Freddy_AI == 1 and Bonnie_AI == 9 and Chica_AI == 8 and Foxy_AI == 7:
   Golden_Freddy = True
   print("You did the funny! Every animatronic's now on 20 difficulty. Have fun :)")
   sleep(3)
+
+#That gives special messages to two different difficulty choices.
 
 office_input = 0
 office_power = 100
@@ -265,6 +269,8 @@ Hour = 12
 camera_on = False
 count = 0
 timecount = 0
+
+#All of my variables being declared :D
 
 Freddy_Position_List = ["1A","1B","7","6","4A","4B","Attack"]
 Bonnie_Position_list = ["1A","5","1B","2A","3","2B","Attack"]
@@ -321,10 +327,14 @@ def golden_freddy_kill():
       sleep (5)
       Alive = False
 
+
+#Defining the functions I use throughout the program
+
 os.system('clear')
 
 # Actual gameplay loop
 while Alive == True and Hour != 6:
+
   if timecount == 9:
     if Hour == 12:
       Hour = 1
@@ -334,8 +344,8 @@ while Alive == True and Hour != 6:
       timecount = 0
       if Hour == 6:
         break
-  else:
-    timecount += 1
+
+  timecount += 1
   
 
   os.system('clear')
@@ -382,19 +392,6 @@ while Alive == True and Hour != 6:
 
   if count == 5:
     count = 0
-
-  # Foxy stages
-  if time % 3 and Foxy_AI != 0:
-    if camera_on == False:
-      if Foxy_Stage != 6:
-        if Foxy_AI < 10:
-          Foxy_Stage += 0.5
-        elif Foxy_AI >= 10 and Foxy_AI <= 15:
-          Foxy_Stage += 1
-        elif Foxy_AI > 15 and Foxy_AI < 20:
-          Foxy_Stage +=2
-        elif Foxy_AI == 20:
-          Foxy_Stage += 3
 
   # Office Stuff
   if camera_on == False:
@@ -501,20 +498,27 @@ while Alive == True and Hour != 6:
         else:
           print("Input a valid action.")
     
+ # Thats a lot of code O.O
+ # Its the office mechanics. It also repeats itself if you put in an invalid option
+
   if Foxy_Stage == 6:
     if left_door_closed == True:
       print("You hear loud banging against the door. After a while, it stops. \n You look at your power, realizing the damage the door recieved took a large chunk of your power supply.")
-      Foxy_Stage == 0
       if Foxy_Attacks == 0:
         office_power -= 1
+        Foxy_Stage = 0
       elif Foxy_Attacks == 1:
         office_power -= 6
+        Foxy_Stage = 0
       elif Foxy_Attacks >= 2:
         office_power -= randint(6,12)
+        Foxy_Stage = 0
     else:
       os.system('clear')
       Alive = False
       FNAF_Images.endings.Dead_Foxy()
+
+  # This is for when foxy runs. It checks if you'll live and kills you if you dont.
 
   # The God Damn Cameras
   if camera_on == True:
@@ -626,6 +630,19 @@ while Alive == True and Hour != 6:
   camera_on = False
   count += 1
 
+  # Foxy stages
+  if time % 3 == 0 and Foxy_AI != 0:
+    if camera_on == False:
+      if Foxy_Stage != 6:
+        if Foxy_AI < 10:
+          Foxy_Stage += 0.5
+        elif Foxy_AI >= 10 and Foxy_AI <= 15:
+          Foxy_Stage += 1
+        elif Foxy_AI > 15 and Foxy_AI < 20:
+          Foxy_Stage +=2
+        elif Foxy_AI == 20:
+          Foxy_Stage += 3
+
   os.system('clear')
   if Chica_Position == "Attack":
     os.system('clear')
@@ -639,3 +656,5 @@ while Alive == True and Hour != 6:
     os.system('clear')
     Alive = False
     FNAF_Images.endings.Dead_Freddy()
+
+#checking if you die :D
